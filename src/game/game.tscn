@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bed1ipkqdshx2"]
+
+[ext_resource type="Script" uid="uid://drour13vabq6o" path="res://src/game/game.gd" id="1_qnjlk"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_qnjlk")
+
+[node name="Pivot" type="Node2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="Camera2D" type="Camera2D" parent="Pivot"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Pivot"]
+color = Color(0.5696223, 0.60822946, 0.5461927, 1)
+polygon = PackedVector2Array(-640, -360, 640, -360, 640, 360, -640, 360)

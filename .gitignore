@@ -1,0 +1,84 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+*.translation
+.nomedia
+
+# By default godot supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
+*.blend1
+
+##################################################
+# Generated files
+##################################################
+
+# Jetbrains Rider personal-layer settings
+*.DotSettings.user
+.idea/
+
+# Visual Studio cache directory
+.vs/
+.vsconfig
+.vscode/
+
+# Gradle cache directory
+.gradle/
+
+# Project and solution auto generated files
+*.xcodeproj
+*.xcworkspace
+*.sln
+*.sln.*
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# Mono auto generated files
+.mono/
+mono_crash.*
+data_*/
+
+##################################################
+# General compiled and built files
+##################################################
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.ipa
+
+# Build directories
+builds/
+
+##################################################
+# Misc directories and files
+##################################################
+
+# Misc. working files
+[Ww]orking/*

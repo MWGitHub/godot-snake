@@ -1,0 +1,143 @@
+#############################################
+# Macro definitions (only works in top-level gitattributes files)
+#############################################
+
+[attr]lfs               filter=lfs diff=lfs merge=lfs -text
+
+
+#############################################
+# General settings
+#############################################
+
+# Normalize EOL for all files that Git considers text files.
+* text=auto eol=lf
+
+# Normalize EOL for all files that Git considers text files.
+* text=auto eol=lf
+
+############################################
+# Platform specific settings
+############################################
+
+# Ensure Windows batch files use CR/LF and Linux shell scripts use LF
+*.bat eol=crlf
+*.sh eol=lf
+
+#############################################
+# Format tracking settings
+#############################################
+
+# Godot 4.5 supported 3D models
+*.gltf                  lfs
+*.glb                   lfs
+*.blend                 lfs
+*.dae                   lfs
+*.collada               lfs
+*.obj                   lfs
+*.fbx                   lfs
+# Other 3d model formats
+*.3dm                   lfs
+*.3ds                   lfs
+*.blend1                lfs
+*.c4d                   lfs
+*.dxf                   lfs
+*.jas                   lfs
+*.lws                   lfs
+*.lxo                   lfs
+*.ma                    lfs
+*.max                   lfs
+*.mb                    lfs
+*.ply                   lfs
+*.skp                   lfs
+*.stl                   lfs
+*.ztl                   lfs
+*.usd                   lfs
+*.usda                  lfs
+*.usdc                  lfs
+*.usdz                  lfs
+
+# Godot 4.5 supported images formats
+*.bmp                   lfs
+*.dds                   lfs
+*.ktx                   lfs
+*.exr                   lfs
+*.hdr                   lfs
+*.jpg                   lfs
+*.jpeg                  lfs
+*.png                   lfs
+*.tga                   lfs
+*.svg                   lfs
+*.webp                  lfs
+# Other image formats
+*.gif                   lfs
+*.iff                   lfs
+*.pict                  lfs
+*.psd                   lfs
+*.tif                   lfs
+*.tiff                  lfs
+*.ico                   lfs
+
+# Godot 4.5 supported audio formats
+*.wav                   lfs
+*.ogg                   lfs
+*.mp3                   lfs
+# Other audio formats
+*.aif                   lfs
+*.aiff                  lfs
+*.it                    lfs
+*.mod                   lfs
+*.s3m                   lfs
+*.xm                    lfs
+
+# Godot 4.5 supported font and icon formats
+*.ttf                   lfs
+*.otf                   lfs
+
+# Godot 4.5 supported video formats
+*.ogv                   lfs
+# Other video formats
+*.asf                   lfs
+*.avi                   lfs
+*.flv                   lfs
+*.mov                   lfs
+*.mp4                   lfs
+*.mpeg                  lfs
+*.mpg                   lfs
+*.wmv                   lfs
+
+# Godot 4.5 supported font formats
+*.ttf                   lfs
+*.ttc                   lfs
+*.otf                   lfs
+*.otc                   lfs
+*.woff                  lfs
+*.woff2                 lfs
+*.fnt                   lfs
+
+# Godot LFS Specific
+*.scn                   lfs
+*.res                   lfs
+*.material              lfs
+*.anim                  lfs
+*.mesh                  lfs
+*.lmbake                lfs
+
+# Compressed Archive
+*.7z                    lfs
+*.bz2                   lfs
+*.gz                    lfs
+*.rar                   lfs
+*.tar                   lfs
+*.zip                   lfs
+
+# Compiled Dynamic Library
+*.dll                   lfs
+*.pdb                   lfs
+*.so                    lfs
+
+# Executable/Installer
+*.apk                   lfs
+*.exe                   lfs
+
+# Documents
+*.pdf                   lfs
