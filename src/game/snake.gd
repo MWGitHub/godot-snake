@@ -12,6 +12,9 @@ const Direction = GameConstants.Direction
 @export var starting_position: Vector2i = Vector2i(0, 0)
 @export var starting_direction: Direction = Direction.UP
 
+## True to allow same direction to count as a successful turn.
+var allow_same_direction: bool = true
+
 # Opposite directions to prevent moving towards
 var _opposite_direction: Dictionary[Direction, Direction] = {
 	Direction.UP: Direction.DOWN,
@@ -61,12 +64,17 @@ func move_step() -> void:
 
 
 ## Turn to the given direction as long as it isn't the opposite.
-func turn(direction: Direction) -> void:
-	# Check if going in the opposite direction
+## Returns true if the turn is valid.
+func turn(direction: Direction) -> bool:
+	# Check if going in the opposite direction or the same direction
 	if _direction == _opposite_direction[direction]:
-		return
+		return false
+
+	if not allow_same_direction and _direction == direction:
+		return false
 
 	_next_direction = direction
+	return true
 
 
 func grow() -> void:

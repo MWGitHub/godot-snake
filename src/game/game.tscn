@@ -5,11 +5,79 @@
 [node name="Game" type="Node"]
 script = ExtResource("1_qnjlk")
 
-[node name="Pivot" type="Node2D" parent="."]
+[node name="GameLayer" type="Node" parent="."]
+
+[node name="Pivot" type="Node2D" parent="GameLayer"]
 position = Vector2(640, 360)
 
-[node name="Camera2D" type="Camera2D" parent="Pivot"]
+[node name="Camera2D" type="Camera2D" parent="GameLayer/Pivot"]
 
-[node name="Polygon2D" type="Polygon2D" parent="Pivot"]
+[node name="Polygon2D" type="Polygon2D" parent="GameLayer/Pivot"]
 color = Color(0.5696223, 0.60822946, 0.5461927, 1)
 polygon = PackedVector2Array(-640, -360, 640, -360, 640, 360, -640, 360)
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 101.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 20
+text = "Score: 0"
+vertical_alignment = 1
+
+[node name="EndScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EndScreenBackground" type="ColorRect" parent="EndScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.5
+offset_right = 114.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="EndScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GameEndLabel" type="Label" parent="EndScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Game Over!"
+
+[node name="GameEndScoreLabel" type="Label" parent="EndScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="EndScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
+[node name="Spacer2" type="Control" parent="EndScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="EndScreen/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
